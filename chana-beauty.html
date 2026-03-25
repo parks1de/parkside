@@ -4,12 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chana Beauty — Parkside.</title>
-  <meta name="description" content="Chana Beauty — komplett identitetssystem med merke, logotypevariasjonar og fysisk skilting." />
+  <meta name="description" content="Chana Beauty Facial Care Center — logo, identitetssystem og fysisk skilting installert i Pattaya, Thailand." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
+  <style>
+    /* ── CSS logo preview — matches actual installed sign aesthetic ── */
+    .ch-preview {
+      background: #0e0e12;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 21 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+      overflow: hidden;
+      position: relative;
+    }
+    .ch-preview-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 2rem;
+    }
+    .ch-medallion {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 2px solid #c8a84b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 24px rgba(200,168,75,0.18), inset 0 0 20px rgba(200,168,75,0.06);
+    }
+    .ch-medallion::before {
+      /* crown above circle */
+      content: '♛';
+      position: absolute;
+      top: -18px;
+      font-size: 1.1rem;
+      color: #c8a84b;
+      opacity: 0.9;
+    }
+    .ch-face {
+      font-size: 2rem;
+      color: #c8a84b;
+      opacity: 0.8;
+      line-height: 1;
+    }
+    .ch-name-preview {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      letter-spacing: 0.18em;
+      color: #c8a84b;
+      font-weight: 400;
+      margin-top: 0.4rem;
+    }
+    .ch-sub-preview {
+      font-family: var(--font-mono);
+      font-size: clamp(0.5rem, 1vw, 0.65rem);
+      letter-spacing: 0.22em;
+      color: #c8a84b;
+      opacity: 0.7;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .ch-thai-preview {
+      font-size: clamp(0.55rem, 1vw, 0.7rem);
+      color: #c8a84b;
+      opacity: 0.55;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Colour / spec blocks ── */
+    .ch-specs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 1px;
+    }
+    .ch-spec {
+      background: var(--surface-2);
+      padding: 1.2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .ch-spec-label {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+    .ch-spec-value {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .ch-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 3px;
+      border: 1px solid var(--border-2);
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 640px) {
+      .ch-specs { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,61 +147,69 @@
     <div class="section-inner">
 
       <div class="project-header">
-        <a href="index.html#work" class="project-back">
+        <a href="index.html#work" class="project-back" data-en="← Back to work">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3l-4 4 4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Tilbake til arbeid
         </a>
-        <span class="project-num">03 / Identitet</span>
+        <span class="project-num">03 / Identitet &amp; Skilting</span>
         <h1 class="project-title">Chana Beauty</h1>
         <div class="project-meta-row">
-          <span class="tag">Identitet</span>
-          <span class="tag">Skilting</span>
-          <span class="tag">Trykk</span>
+          <span class="tag" data-en="Identity">Identitet</span>
+          <span class="tag" data-en="Signage">Skilting</span>
+          <span class="tag" data-en="Print">Trykk</span>
+          <span class="tag">Thailand</span>
         </div>
-        <p class="project-summary">
-          Komplett identitetssystem med merke, logotypevariasjonar og fysisk skilting — bakbelyst innandørsplansje (160×100 cm) og utandørsfasade. Levert CMYK-utskriftsklart til produksjonsspesifikasjon.
+        <p class="project-summary" data-en="Logo and complete identity system for Chana Beauty Facial Care Center — from digital brand files to physical signage installed in Pattaya, Thailand. Delivered CMYK print-ready to exact production specification.">
+          Logo og komplett identitetssystem for Chana Beauty Facial Care Center — frå digitale brandfiler til fysisk skilting installert i Pattaya, Thailand. Levert CMYK-utskriftsklart til eksakt produksjonsspesifikasjon.
         </p>
       </div>
 
       <div class="project-body">
 
-        <!-- Hero visual — logo on dark -->
-        <div class="project-media project-media--wide" style="margin-bottom: clamp(3rem,5vw,5rem)">
-          <!-- LEGG TIL: foto av ferdig bakbelyst skilt eller mockup av logoidentitet -->
-          <div class="project-media-placeholder">
-            <span class="project-media-placeholder-icon">◻</span>
-            <span class="project-media-placeholder-label">Foto — bakbelyst innandørsplansje (160×100 cm)</span>
+        <!-- CSS logo preview — actual design rendered in CSS -->
+        <div class="ch-preview">
+          <div class="ch-preview-inner">
+            <div class="ch-medallion">
+              <span class="ch-face">♀</span>
+            </div>
+            <div class="ch-name-preview">CHANA</div>
+            <div class="ch-thai-preview">ศูนย์ความงามชานา</div>
+            <div class="ch-sub-preview" data-en="Beauty Facial Care Center">Beauty Facial Care Center</div>
           </div>
         </div>
 
         <div class="project-grid">
           <div>
-            <span class="project-section-label">Om prosjektet</span>
-            <p class="project-text">
-              Chana Beauty trong ein visuell identitet som fungerte på tvers av digitale flater og fysisk skilting — frå visittkort til eit bakbelyst innandørsskilt på 160×100 cm.
+            <span class="project-section-label" data-en="About the project">Om prosjektet</span>
+            <p class="project-text" data-en="Chana Beauty Facial Care Center needed a visual identity that communicated luxury and care — with equal weight in both English and Thai — and that could be reproduced faithfully at scale on large-format physical signage.">
+              Chana Beauty Facial Care Center trong ein visuell identitet som kommuniserte luksus og omsorg — med same tyngde på både engelsk og thai — og som kunne reproduserast trufast i stor skala på fysisk skilting.
             </p>
-            <p class="project-text">
-              Identiteten er bygd rundt eit merke og logotype­system som skalerer reint frå liten digital bruk til stor fasadeskilting. Alle leveransar er produksjonsklare i korrekt fargerom (CMYK) og til dei nøyaktige spesifikasjonane trykkeriet krev.
+            <p class="project-text" data-en="The logo is built around a circular medallion motif: a woman's profile silhouette at the centre, surrounded by decorative scrollwork, crowned at the top. The dark near-black background and gold palette gives the brand a consistent luxury register across all surfaces.">
+              Logoen er bygd rundt eit sirkulært medallionmotiv: ei silhuett av ei kvinne i profil i sentrum, omgitt av dekorativt rankearbeid, med ei krone på toppen. Den mørke nesten-svarte bakgrunnen og gullpaletten gjev merkevara eit konsistent luksuspreg på tvers av alle flater.
             </p>
-            <p class="project-text">
-              Utandørsfasaden og innandørsplansjen vart produserte i Noreg basert på Parkside sine tekniske fil­leveransar.
+            <p class="project-text" data-en="All files were delivered to production specification — CMYK values calibrated for large-format print, with the outdoor facade sign and indoor backlit panel (160×100 cm) produced and installed at the client's premises in Pattaya.">
+              Alle filer vart leverte til produksjonsspesifikasjon — CMYK-verdiar kalibrerte for storformat-trykk, med utandørsfasadeskilt og innandørs bakbelyst plansje (160×100 cm) produsert og installert hjå klienten i Pattaya.
             </p>
           </div>
           <div class="project-detail-list">
             <div class="project-detail-item">
-              <span class="project-detail-label">Kunde</span>
-              <span class="project-detail-value">Chana Beauty</span>
+              <span class="project-detail-label" data-en="Client">Kunde</span>
+              <span class="project-detail-value">Chana Beauty Facial Care Center</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label" data-en="Location">Stad</span>
+              <span class="project-detail-value">Pattaya, Thailand</span>
             </div>
             <div class="project-detail-item">
               <span class="project-detail-label">Scope</span>
-              <span class="project-detail-value">Merkedesign · Logotypevariasjonar · Fysisk skilting</span>
+              <span class="project-detail-value" data-en="Logo · Medallion mark · Typography system · Colour system · Signage files">Logo · Medallionmerke · Typografisystem · Fargesystem · Skiltfiler</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Skilting</span>
-              <span class="project-detail-value">Bakbelyst innandørsplansje 160×100 cm · Utandørsfasade</span>
+              <span class="project-detail-label" data-en="Physical signage">Fysisk skilting</span>
+              <span class="project-detail-value" data-en="Outdoor facade · Indoor backlit panel 160×100 cm">Utandørsfasade · Innandørs bakbelyst plansje 160×100 cm</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Leveranseformat</span>
+              <span class="project-detail-label" data-en="Delivery formats">Leveranseformat</span>
               <span class="project-detail-value">SVG · PDF · CMYK-trykkferdig · PNG</span>
             </div>
           </div>
@@ -97,36 +217,61 @@
 
         <hr class="project-divider" />
 
-        <!-- Identity assets grid -->
+        <!-- Design specs -->
+        <span class="project-section-label" data-en="Design system">Designsystem</span>
+        <div class="ch-specs">
+          <div class="ch-spec">
+            <span class="ch-spec-label" data-en="Primary colour">Primærfarge</span>
+            <span class="ch-spec-value">#0e0e12</span>
+            <div class="ch-swatch" style="background:#0e0e12;"></div>
+          </div>
+          <div class="ch-spec">
+            <span class="ch-spec-label" data-en="Gold / accent">Gull / aksent</span>
+            <span class="ch-spec-value">#c8a84b</span>
+            <div class="ch-swatch" style="background:#c8a84b;"></div>
+          </div>
+          <div class="ch-spec">
+            <span class="ch-spec-label" data-en="Logo mark">Logomerke</span>
+            <span class="ch-spec-value" data-en="Circular medallion · crown · profile silhouette">Sirkulær medallion · krone · profilsilhuett</span>
+          </div>
+          <div class="ch-spec">
+            <span class="ch-spec-label" data-en="Languages on signage">Språk på skilt</span>
+            <span class="ch-spec-value" data-en="English · Thai (ภาษาไทย)">Engelsk · Thai (ภาษาไทย)</span>
+          </div>
+        </div>
+
+        <hr class="project-divider" />
+
+        <!-- Photo slots -->
         <div class="project-grid">
           <div class="project-media project-media--square">
-            <!-- LEGG TIL: logo på lys bakgrunn -->
+            <!-- Replace with: logo on dark background, or SVG export -->
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Logo — primærvariasjon</span>
+              <span class="project-media-placeholder-label" data-en="Logo — isolated on dark">Logo — isolert på mørk bakgrunn</span>
             </div>
           </div>
           <div class="project-media project-media--square">
-            <!-- LEGG TIL: logo på mørk bakgrunn / mockup av skilt -->
+            <!-- Replace with: indoor backlit panel photo -->
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Logo — mørk bakgrunn / skiltmockup</span>
+              <span class="project-media-placeholder-label" data-en="Indoor backlit panel — 160×100 cm">Innandørs bakbelyst plansje — 160×100 cm</span>
             </div>
           </div>
         </div>
 
         <div class="project-media project-media--wide" style="margin-top: 1px">
-          <!-- LEGG TIL: foto utandørsfasade -->
+          <!-- Replace with: chana-signage-outdoor.jpg — clean photo of installed facade sign -->
           <div class="project-media-placeholder">
             <span class="project-media-placeholder-icon">◻</span>
-            <span class="project-media-placeholder-label">Foto — utandørsfasade</span>
+            <span class="project-media-placeholder-label" data-en="Outdoor facade — installed signage, Pattaya">Utandørsfasade — installert skilt, Pattaya</span>
           </div>
         </div>
 
       </div>
 
       <div class="project-next">
-        <span class="project-next-label">Neste prosjekt</span>
+        <span class="project-next-label" data-en="Next project">Neste prosjekt</span>
         <a href="envision-it.html" class="project-next-link">
           <span class="project-next-title">Envision-IT</span>
           <span class="project-next-arrow">→</span>
