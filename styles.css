@@ -128,7 +128,7 @@ ul {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 clamp(1.5rem, 4vw, 4rem);
-  height: 64px;
+  height: 80px;
 }
 
 .nav-logo {
@@ -138,8 +138,8 @@ ul {
 }
 
 .nav-wordmark {
-  height: 28px;
-  width: 90px;
+  height: 56px;
+  width: 180px;
   object-fit: contain;
   object-position: left center;
   filter: brightness(0) invert(1);
@@ -1469,6 +1469,59 @@ a.contact-item-value:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-dim);
+}
+
+/* ══════════════════════════════════════════════════════
+   HERO ICON — Animated pixel P
+══════════════════════════════════════════════════════ */
+.hero-icon {
+  position: absolute;
+  right: clamp(4%, 9vw, 14%);
+  top: 50%;
+  transform: translateY(-48%);
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-icon-img {
+  display: block;
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  opacity: 0.55;
+  filter: drop-shadow(0 0 32px rgba(196, 163, 90, 0.18));
+}
+
+/* Pixel container — positioned absolute over icon */
+.hero-pixels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Individual pixel */
+.px {
+  position: absolute;
+  left: var(--px-x);
+  top: var(--px-y);
+  width: var(--px-size);
+  height: var(--px-size);
+  background: var(--accent);
+  opacity: 0;
+  animation: pixelFall var(--px-dur) ease-out var(--px-delay) infinite;
+}
+
+@keyframes pixelFall {
+  0%   { opacity: 0; transform: translate(0, 0) scale(1); }
+  8%   { opacity: 0.9; }
+  85%  { opacity: 0.3; }
+  100% { opacity: 0; transform: translate(var(--px-dx), var(--px-dy)) scale(0.4); }
+}
+
+/* Hide icon on small screens — keeps hero clean */
+@media (max-width: 900px) {
+  .hero-icon { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════

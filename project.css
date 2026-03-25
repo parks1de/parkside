@@ -1,0 +1,257 @@
+/* ═══════════════════════════════════════════════════════
+   PARKSIDE — PROJECT DETAIL PAGES
+   Inherits design tokens from styles.css
+═══════════════════════════════════════════════════════ */
+
+/* ── BACK NAV ────────────────────────────────────────── */
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  transition: color 0.2s;
+  margin-bottom: 3rem;
+}
+
+.project-back:hover { color: var(--accent); }
+
+.project-back svg {
+  transition: transform 0.2s var(--ease-out);
+}
+
+.project-back:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ── PROJECT HEADER ─────────────────────────────────── */
+.project-header {
+  padding: clamp(6rem, 10vw, 10rem) 0 clamp(3rem, 5vw, 5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 2rem;
+}
+
+.project-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.project-summary {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--text-mid);
+  max-width: 60ch;
+  font-weight: 400;
+}
+
+/* ── PROJECT BODY ────────────────────────────────────── */
+.project-body {
+  padding: clamp(4rem, 7vw, 7rem) 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: start;
+  margin-bottom: clamp(4rem, 6vw, 6rem);
+}
+
+.project-grid--full {
+  grid-template-columns: 1fr;
+}
+
+.project-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.project-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin-bottom: 1rem;
+}
+
+.project-text:last-child { margin-bottom: 0; }
+
+/* ── IMAGE / MEDIA BLOCKS ────────────────────────────── */
+.project-media {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-media--tall {
+  aspect-ratio: 4 / 5;
+}
+
+.project-media--wide {
+  aspect-ratio: 21 / 9;
+}
+
+.project-media--square {
+  aspect-ratio: 1;
+}
+
+/* Placeholder state — shown when no image provided */
+.project-media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+}
+
+.project-media-placeholder-icon {
+  font-size: 1.5rem;
+  opacity: 0.2;
+}
+
+.project-media-placeholder-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+/* ── DETAIL LIST ─────────────────────────────────────── */
+.project-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.project-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-detail-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.project-detail-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ── DIVIDER ─────────────────────────────────────────── */
+.project-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: clamp(3rem, 5vw, 5rem) 0;
+}
+
+/* ── NEXT PROJECT ────────────────────────────────────── */
+.project-next {
+  padding: clamp(3rem, 5vw, 5rem) 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-next-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.project-next-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1rem;
+  transition: gap 0.25s var(--ease-out);
+}
+
+.project-next-link:hover { gap: 1.5rem; }
+
+.project-next-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.project-next-link:hover .project-next-title {
+  color: var(--accent);
+}
+
+.project-next-arrow {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.project-next-link:hover .project-next-arrow {
+  color: var(--accent);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
