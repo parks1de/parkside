@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parkside.</title>
+  <meta name="description" content="Parkside. Design, utvikling og teknisk utføring — frå identitet til programvare." />
+  <meta property="og:title" content="Parkside." />
+  <meta property="og:description" content="Design, utvikling og teknisk utføring — frå identitet til programvare." />
+  <meta property="og:type" content="website" />
+  <!-- Favicon inline SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' fill='%23c4a35a' font-family='Georgia,serif' font-size='20' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo/parkside-wordmark.svg" alt="Parkside." class="nav-wordmark" />
+      </a>
+      <div class="nav-links">
+        <a href="#work" class="nav-link">Arbeid</a>
+        <a href="#about" class="nav-link">Om</a>
+        <a href="#contact" class="nav-cta">Kontakt</a>
+      </div>
+      <button class="nav-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="#work" class="nav-mobile-link">Arbeid</a>
+      <a href="#about" class="nav-mobile-link">Om</a>
+      <a href="#contact" class="nav-mobile-link">Kontakt</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-label">Parkside. — Kaupanger, Noreg</div>
+      <h1 class="hero-heading">
+        <span class="hero-line">Bygt</span>
+        <span class="hero-line hero-line--accent">for å halde.</span>
+      </h1>
+      <p class="hero-sub">
+        Design, programvare og teknisk utføring — for kundar som krev at ting vert gjort skikkeleg.
+      </p>
+      <div class="hero-scroll">
+        <a href="#work" class="hero-scroll-link">
+          <span>Utvalt arbeid</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+  </section>
+
+  <!-- ── WORK ────────────────────────────────────────── -->
+  <section class="work" id="work">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-label">Utvalt arbeid</span>
+      </div>
+
+      <div class="work-grid">
+
+        <!-- 01 — Lerum Cup 2026 -->
+        <article class="work-card work-card--wide" data-index="01">
+          <div class="work-card-link" aria-label="Lerum Cup 2026 — Webapplikasjon">
+            <div class="work-card-visual work-card-visual--lerum">
+              <div class="lerum-viz">
+                <div class="lv-header">
+                  <span class="lv-dot lv-dot--green"></span>
+                  <span class="lv-title">LERUM CUP 2026 — Kampprogram</span>
+                  <span class="lv-badge">Demo</span>
+                </div>
+                <div class="lv-modes">
+                  <span class="lv-mode lv-mode--active">Program</span>
+                  <span class="lv-mode">Mitt lag</span>
+                  <span class="lv-mode">Dommar</span>
+                </div>
+                <div class="lv-filters">
+                  <span class="lv-filter">Dag ▾</span>
+                  <span class="lv-filter">Klasse ▾</span>
+                  <span class="lv-filter">Stad ▾</span>
+                  <span class="lv-filter lv-filter--active">Mitt lag</span>
+                </div>
+                <div class="lv-cards">
+                  <div class="lv-card">
+                    <span class="lv-time">09:00</span>
+                    <span class="lv-match">Kaupanger IL G10 <em>vs</em> Sogndal IL G10</span>
+                    <span class="lv-loc">K1 · Kaupanger</span>
+                  </div>
+                  <div class="lv-card">
+                    <span class="lv-time">10:30</span>
+                    <span class="lv-match">Leikanger FK J12 <em>vs</em> Luster IL J12</span>
+                    <span class="lv-loc">L2 · Leikanger</span>
+                  </div>
+                  <div class="lv-card lv-card--faded">
+                    <span class="lv-time">12:00</span>
+                    <span class="lv-match">Kaupanger IL G12 <em>vs</em> Hafslo BK G12</span>
+                    <span class="lv-loc">S1 · Sogndal</span>
+                  </div>
+                </div>
+                <div class="lv-stats">
+                  <span>82 kampar</span>
+                  <span>44 lag</span>
+                  <span>6 klassar</span>
+                  <span>4 stader</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">01</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">Lerum Cup 2026</h2>
+                <p class="work-card-desc">Datadrive turneringsprogram. Fleirmodusfilttrering (tilskodar, lag, dommar), JSON-datalag, Google Sheets-integrasjon, sponsorhandtering — utplassert som ein statisk nettstad.</p>
+                <div class="work-card-tags">
+                  <span class="tag">Webapplikasjon</span>
+                  <span class="tag">Data</span>
+                  <span class="tag">Kaupanger IL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — KalSikt -->
+        <article class="work-card" data-index="02">
+          <div class="work-card-link" aria-label="KalSikt — Kalenderapplikasjon">
+            <div class="work-card-visual work-card-visual--kalsikt">
+              <div class="kalsikt-viz">
+                <img src="assets/work/kalsikt-logo.png" alt="KalSikt logo" class="kalsikt-logo-img" />
+                <div class="kalsikt-grid">
+                  <div class="kg-event kg-event--sport">Treningsøkt 18:00</div>
+                  <div class="kg-event kg-event--meeting">Styremøte 19:30</div>
+                  <div class="kg-event kg-event--sport">Kamp vs Sogndal 15:00</div>
+                  <div class="kg-event kg-event--other">Dugnad 10:00</div>
+                </div>
+                <div class="kalsikt-powered">
+                  <span>↕ Google Calendar API</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">02</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">KalSikt</h2>
+                <p class="work-card-desc">Hendingsvising og innebygd funksjon for Kaupanger IL. Brukarar legg inn via Google Calendar; data vert handsama gjennom API-et og presentert i ei strukturert offentleg vising.</p>
+                <div class="work-card-tags">
+                  <span class="tag">Web App</span>
+                  <span class="tag">API Integration</span>
+                  <span class="tag">Kaupanger IL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — IVIONIZER -->
+        <article class="work-card" data-index="03">
+          <div class="work-card-link" aria-label="IVIONIZER — Skrivebordsprogramvare">
+            <div class="work-card-visual work-card-visual--ivionizer">
+              <div class="ivionizer-viz">
+                <div class="iv-titlebar">
+                  <span class="iv-dot iv-dot--red"></span>
+                  <span class="iv-dot iv-dot--yellow"></span>
+                  <span class="iv-dot iv-dot--green"></span>
+                  <span class="iv-app-name">IVIONIZER v3</span>
+                </div>
+                <div class="iv-body">
+                  <div class="iv-panel iv-panel--left">
+                    <div class="iv-label">Input</div>
+                    <div class="iv-value">Fisheye .JPG</div>
+                    <div class="iv-preview iv-preview--fisheye"></div>
+                    <div class="iv-status iv-status--warn">NavVis inkompatibel</div>
+                  </div>
+                  <div class="iv-arrow">
+                    <svg width="32" height="16" viewBox="0 0 32 16" fill="none">
+                      <path d="M1 8h28M22 2l8 6-8 6" stroke="#c4a35a" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="iv-process">Uskarpheit · Utskjering · Konverter</span>
+                  </div>
+                  <div class="iv-panel iv-panel--right">
+                    <div class="iv-label">Output</div>
+                    <div class="iv-value">.DNG (NavVis Ivion)</div>
+                    <div class="iv-preview iv-preview--dng"></div>
+                    <div class="iv-status iv-status--ok">Ivion klar</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">03</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">IVIONIZER</h2>
+                <p class="work-card-desc">Skrivebordsapplikasjon for redigering av fisheye-bilete (uskarpheit, utskjering) og lagring som .DNG for bruk i NavVis Ivion, som ikkje godtek redigerte bilete eller alternative format. Laga for Envision-IT. v3.</p>
+                <div class="work-card-tags">
+                  <span class="tag">Software</span>
+                  <span class="tag">Desktop App</span>
+                  <span class="tag">Envision-IT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — Chana Beauty -->
+        <article class="work-card" data-index="04">
+          <div class="work-card-link" aria-label="Chana Beauty — Identitet og skilting">
+            <div class="work-card-visual work-card-visual--chana">
+              <div class="chana-viz">
+                <div class="ch-logo-area">
+                  <div class="ch-logo-mark">CB</div>
+                  <div class="ch-logo-text">
+                    <span class="ch-name">CHANA</span>
+                    <span class="ch-sub">BEAUTY CENTER</span>
+                  </div>
+                </div>
+                <div class="ch-signage">
+                  <div class="ch-sign ch-sign--backlit">
+                    <span>CHANA BEAUTY CENTER</span>
+                    <span class="ch-sign-glow"></span>
+                  </div>
+                </div>
+                <div class="ch-formats">
+                  <span class="ch-fmt">SVG</span>
+                  <span class="ch-fmt">PDF</span>
+                  <span class="ch-fmt">CMYK trykkferdig</span>
+                  <span class="ch-fmt">160×100 cm</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">04</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">Chana Beauty</h2>
+                <p class="work-card-desc">Komplett identitetssystem med merke, logotypevariasjonar og fysisk skilting — bakbelyst innandørsplansje (160×100 cm) og utandørsfasade. Levert CMYK-utskriftsklart til produksjonsspesifikasjon.</p>
+                <div class="work-card-tags">
+                  <span class="tag">Identitet</span>
+                  <span class="tag">Skilting</span>
+                  <span class="tag">Trykk</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 — Envision-IT -->
+        <article class="work-card" data-index="05">
+          <div class="work-card-link" aria-label="Envision-IT — Brandidentitet">
+            <div class="work-card-visual work-card-visual--envision">
+              <div class="envision-viz">
+                <div class="ev-logo">
+                  <img src="assets/work/envision-it-logo.png" alt="Envision-IT logo" class="ev-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                  <div class="ev-logo-fallback">
+                    <span class="ev-eye">◉</span>
+                    <span class="ev-wordmark">ENVISION-<em>it</em></span>
+                  </div>
+                </div>
+                <div class="ev-elements">
+                  <div class="ev-element ev-element--brainwave"></div>
+                  <div class="ev-element ev-element--slogan">
+                    <span>Digitalisering</span>
+                    <span>av det historiske</span>
+                  </div>
+                </div>
+                <div class="ev-formats">
+                  <span class="ev-fmt">Logo</span>
+                  <span class="ev-fmt">Brandelement</span>
+                  <span class="ev-fmt">Slogansystem</span>
+                  <span class="ev-fmt">Fargeguide</span>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">05</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">Envision-IT</h2>
+                <p class="work-card-desc">Komplett visuell identitet — merke, ordmerke, tilpassa brandelement (digitale hjernebølgjer, rullemotiv), slogansystem og fargeguide. Levert som SVG, PDF, PNG og JPG.</p>
+                <div class="work-card-tags">
+                  <span class="tag">Identitet</span>
+                  <span class="tag">Brandsystem</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 — Kaupangerhallen -->
+        <article class="work-card" data-index="06">
+          <div class="work-card-link" aria-label="Kaupangerhallen — Tekniske teikningar og CAD">
+            <div class="work-card-visual work-card-visual--cad">
+              <div class="cad-viz">
+                <img src="assets/work/technical-drawing-01.png" alt="Teknisk grunnplanteikning" class="cad-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'" />
+                <div class="cad-fallback">
+                  <div class="cad-grid-lines" aria-hidden="true"></div>
+                  <div class="cad-annotation">
+                    <span class="cad-label">Kaupangerhallen</span>
+                    <span class="cad-scale">Skala 1:100</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="work-card-info">
+              <span class="work-card-num">06</span>
+              <div class="work-card-meta">
+                <h2 class="work-card-title">Kaupangerhallen</h2>
+                <p class="work-card-desc">3D CAD-arbeid for innandørsskatepark og fullstendige hallteikningar nytta i samarbeid med ingeniørar og arkitektar gjennom heile byggeutviklingsprosessen.</p>
+                <div class="work-card-tags">
+                  <span class="tag">3D CAD</span>
+                  <span class="tag">Tekniske teikningar</span>
+                  <span class="tag">Arkitektur</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /work-grid -->
+    </div>
+  </section>
+
+  <!-- ── ABOUT ────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+
+        <div class="about-copy">
+          <span class="section-label">Om</span>
+          <h2 class="about-heading">Lite studio.<br />Breitt spekter.</h2>
+          <p class="about-text">
+            Parkside er eit design- og utviklingsstudio frå Vestlandet. Vi tek på oss arbeid som krev klar tenking på tvers av fagfelt — identitet, nett, programvare og teknisk produksjon.
+          </p>
+          <p class="about-text">
+            Dei fleste kundane våre er organisasjonar, verksemder og institusjonar i regionen. Vi handterer heile kjeda frå brief til levert fil, inkludert det andre studioar vanlegvis set ut.
+          </p>
+        </div>
+
+        <div class="about-capabilities">
+          <div class="cap-group">
+            <h3 class="cap-group-title">Digitalt</h3>
+            <ul class="cap-list">
+              <li>Webdesign og utvikling</li>
+              <li>Webapplikasjonar</li>
+              <li>API-integrasjon</li>
+              <li>Skrivebordsprogramvare</li>
+              <li>Datadrivne grensesnitt</li>
+            </ul>
+          </div>
+          <div class="cap-group">
+            <h3 class="cap-group-title">Identitet</h3>
+            <ul class="cap-list">
+              <li>Brandidentitetssystem</li>
+              <li>Logo og merkedesign</li>
+              <li>Farge og typografi</li>
+              <li>Brandelementbibliotek</li>
+              <li>Trykkerifiler</li>
+            </ul>
+          </div>
+          <div class="cap-group">
+            <h3 class="cap-group-title">Teknisk</h3>
+            <ul class="cap-list">
+              <li>Fysisk skilting</li>
+              <li>3D-modellering og CAD</li>
+              <li>Tekniske teikningar</li>
+              <li>Arkitektonisk koordinering</li>
+              <li>Skreddarsydde verktøy</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="about-clients">
+          <span class="cap-group-title">Nokre kundar</span>
+          <div class="clients-list">
+            <span>Kaupanger IL</span>
+            <span>Envision-IT</span>
+            <span>Chana Beauty</span>
+            <span>Move Sogn</span>
+            <span>T&amp;D Bakeri</span>
+            <span>Sogndal Gjestebrygge</span>
+            <span>Årdalshjelpen</span>
+            <span>Next Fitness</span>
+            <span>Fortidsminneforeningen</span>
+            <span>Kaupanger Næringsutvikling</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ──────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <span class="section-label">Kontakt</span>
+          <h2 class="contact-heading">La oss snakka.</h2>
+          <p class="contact-text">
+            Vi arbeider direkte med kundane. Ingen pitchar, ingen anbodsrundar — berre ein samtale om kva du treng.
+          </p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="contact-item-label">E-post</span>
+            <a href="mailto:post@parkside.no" class="contact-item-value">post@parkside.no</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Telefon</span>
+            <a href="tel:+4795143314" class="contact-item-value">+47 951 43 314</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Registrert</span>
+            <span class="contact-item-value">Parkside1 AS · Org. 921 253 125</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ───────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="assets/logo/parkside-wordmark.svg" alt="Parkside." class="footer-logo" />
+      <span class="footer-copy">© 2026 Parkside1 AS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
