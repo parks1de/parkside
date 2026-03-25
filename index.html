@@ -23,35 +23,45 @@
         <img src="assets/logo/parkside-wordmark.svg" alt="Parkside." class="nav-wordmark" />
       </a>
       <div class="nav-links">
-        <a href="#work" class="nav-link">Arbeid</a>
-        <a href="#about" class="nav-link">Om</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
+        <a href="#work" class="nav-link" data-en="Work">Arbeid</a>
+        <a href="#about" class="nav-link" data-en="About">Om</a>
+        <a href="#contact" class="nav-cta" data-en="Contact">Kontakt</a>
+        <div class="lang-switch" aria-label="Language">
+          <button class="lang-btn lang-btn--active" data-lang="nn" aria-pressed="true">NN</button>
+          <span class="lang-sep" aria-hidden="true">·</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
       <button class="nav-menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
     <div class="nav-mobile" id="mobileMenu">
-      <a href="#work" class="nav-mobile-link">Arbeid</a>
-      <a href="#about" class="nav-mobile-link">Om</a>
-      <a href="#contact" class="nav-mobile-link">Kontakt</a>
+      <a href="#work" class="nav-mobile-link" data-en="Work">Arbeid</a>
+      <a href="#about" class="nav-mobile-link" data-en="About">Om</a>
+      <a href="#contact" class="nav-mobile-link" data-en="Contact">Kontakt</a>
+      <div class="lang-switch lang-switch--mobile">
+        <button class="lang-btn lang-btn--active" data-lang="nn" aria-pressed="true">NN</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </div>
   </nav>
 
   <!-- ── HERO ────────────────────────────────────────── -->
   <section class="hero" id="top">
     <div class="hero-inner">
-      <div class="hero-label">Parkside. — Kaupanger, Noreg</div>
+      <div class="hero-label" data-en="Parkside. — Kaupanger, Norway">Parkside. — Kaupanger, Noreg</div>
       <h1 class="hero-heading">
-        <span class="hero-line">Bygt</span>
-        <span class="hero-line hero-line--accent">for å halde.</span>
+        <span class="hero-line" data-en="Built">Bygd</span>
+        <span class="hero-line hero-line--accent" data-en="to last.">for å halde.</span>
       </h1>
-      <p class="hero-sub">
+      <p class="hero-sub" data-en="Design, software and technical execution — for clients who demand things done properly.">
         Design, programvare og teknisk utføring — for kundar som krev at ting vert gjort skikkeleg.
       </p>
       <div class="hero-scroll">
         <a href="#work" class="hero-scroll-link">
-          <span>Utvalt arbeid</span>
+          <span data-en="Selected work">Utvalt arbeid</span>
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -61,25 +71,7 @@
 
     <!-- Animated P icon — right hero field -->
     <div class="hero-icon" aria-hidden="true">
-      <!-- Inline SVG — no external file dependency -->
-      <svg class="hero-icon-img" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" fill="currentColor" d="
-          M 50 18
-          L 50 242
-          L 98 242
-          L 98 160
-          C 104 148, 116 142, 132 140
-          Q 214 136, 214 92
-          Q 214 18, 132 18
-          Z
-          M 98 52
-          Q 100 48, 126 48
-          Q 166 48, 166 92
-          Q 166 128, 126 128
-          Q 100 128, 98 124
-          Z
-        "/>
-      </svg>
+      <img src="assets/logo/parkside-icon-gold.svg" alt="" class="hero-icon-img" />
       <div class="hero-pixels">
         <span class="px" style="--px-x:72px;--px-y:174px;--px-size:5px;--px-dur:2.1s;--px-delay:0.0s;--px-dx:-2px;--px-dy:38px"></span>
         <span class="px" style="--px-x:86px;--px-y:178px;--px-size:4px;--px-dur:1.8s;--px-delay:0.4s;--px-dx:3px;--px-dy:44px"></span>
@@ -134,7 +126,7 @@
               <span class="work-card-num">01</span>
               <div class="work-card-meta">
                 <h2 class="work-card-title">KalSikt</h2>
-                <p class="work-card-desc">Hendingsvising og innebygd funksjon for Kaupanger IL. Brukarar legg inn via Google Calendar; data vert handsama gjennom API-et og presentert i ei strukturert offentleg vising.</p>
+                <p class="work-card-desc" data-en="Event display and embedded widget for Kaupanger IL. Users add events via Google Calendar; data is processed through the API and presented in a structured public view.">Hendingsvising og innebygd funksjon for Kaupanger IL. Brukarar legg inn via Google Calendar; data vert handsama gjennom API-et og presentert i ei strukturert offentleg vising.</p>
                 <div class="work-card-tags">
                   <span class="tag">Web App</span>
                   <span class="tag">API Integration</span>
@@ -182,7 +174,7 @@
               <span class="work-card-num">02</span>
               <div class="work-card-meta">
                 <h2 class="work-card-title">IVIONIZER</h2>
-                <p class="work-card-desc">Skrivebordsapplikasjon for redigering av fisheye-bilete (uskarpheit, utskjering) og lagring som .DNG for bruk i NavVis Ivion, som ikkje godtek redigerte bilete eller alternative format. Laga for Envision-IT. v3.</p>
+                <p class="work-card-desc" data-en="Desktop application for editing fisheye images (blur, cropping) and saving as .DNG for NavVis Ivion — which accepts neither edited images nor alternative formats. Built for Envision-IT. v3.">Skrivebordsapplikasjon for redigering av fisheye-bilete (uskarpheit, utskjering) og lagring som .DNG for bruk i NavVis Ivion, som ikkje godtek redigerte bilete eller alternative format. Laga for Envision-IT. v3.</p>
                 <div class="work-card-tags">
                   <span class="tag">Software</span>
                   <span class="tag">Desktop App</span>
@@ -223,7 +215,7 @@
               <span class="work-card-num">03</span>
               <div class="work-card-meta">
                 <h2 class="work-card-title">Chana Beauty</h2>
-                <p class="work-card-desc">Komplett identitetssystem med merke, logotypevariasjonar og fysisk skilting — bakbelyst innandørsplansje (160×100 cm) og utandørsfasade. Levert CMYK-utskriftsklart til produksjonsspesifikasjon.</p>
+                <p class="work-card-desc" data-en="Complete identity system with badge, logotype variants and physical signage — backlit indoor panel (160×100 cm) and outdoor facade. Delivered CMYK print-ready to production specification.">Komplett identitetssystem med merke, logotypevariasjonar og fysisk skilting — bakbelyst innandørsplansje (160×100 cm) og utandørsfasade. Levert CMYK-utskriftsklart til produksjonsspesifikasjon.</p>
                 <div class="work-card-tags">
                   <span class="tag">Identitet</span>
                   <span class="tag">Skilting</span>
@@ -265,10 +257,11 @@
               <span class="work-card-num">04</span>
               <div class="work-card-meta">
                 <h2 class="work-card-title">Envision-IT</h2>
-                <p class="work-card-desc">Komplett visuell identitet — merke, ordmerke, tilpassa brandelement (digitale hjernebølgjer, rullemotiv), slogansystem og fargeguide. Levert som SVG, PDF, PNG og JPG.</p>
+                <p class="work-card-desc" data-en="Brand identity and website for a property digitisation company — three-product service structure (Mitt Hjem, Mitt Boliglag, Mitt Bygg), full colour system, typography and web build.">Merkevare og nettstad for eit eigedomsdigitaliserings­selskap — treprodukt-struktur (Mitt Hjem, Mitt Boliglag, Mitt Bygg), komplett fargesystem, typografi og nettside.</p>
                 <div class="work-card-tags">
-                  <span class="tag">Identitet</span>
-                  <span class="tag">Brandsystem</span>
+                  <span class="tag">Merkevare</span>
+                  <span class="tag">Nettstad</span>
+                  <span class="tag">Profilhandbok</span>
                 </div>
               </div>
             </div>
@@ -294,7 +287,7 @@
               <span class="work-card-num">05</span>
               <div class="work-card-meta">
                 <h2 class="work-card-title">Kaupangerhallen</h2>
-                <p class="work-card-desc">3D CAD-arbeid for innandørsskatepark og fullstendige hallteikningar nytta i samarbeid med ingeniørar og arkitektar gjennom heile byggeutviklingsprosessen.</p>
+                <p class="work-card-desc" data-en="3D CAD work for an indoor skatepark and complete hall drawings used in collaboration with engineers and architects throughout the building development process.">3D CAD-arbeid for innandørsskatepark og fullstendige hallteikningar nytta i samarbeid med ingeniørar og arkitektar gjennom heile byggeutviklingsprosessen.</p>
                 <div class="work-card-tags">
                   <span class="tag">3D CAD</span>
                   <span class="tag">Tekniske teikningar</span>
@@ -315,19 +308,19 @@
       <div class="about-grid">
 
         <div class="about-copy">
-          <span class="section-label">Om</span>
-          <h2 class="about-heading">Lite studio.<br />Breitt spekter.</h2>
-          <p class="about-text">
+          <span class="section-label" data-en="About">Om</span>
+          <h2 class="about-heading" data-en="Small studio.<br />Wide range.">Lite studio.<br />Breitt spekter.</h2>
+          <p class="about-text" data-en="Parkside is a design and development studio from Western Norway. We take on work that requires clear thinking across disciplines — identity, web, software and technical production.">
             Parkside er eit design- og utviklingsstudio frå Vestlandet. Vi tek på oss arbeid som krev klar tenking på tvers av fagfelt — identitet, nett, programvare og teknisk produksjon.
           </p>
-          <p class="about-text">
+          <p class="about-text" data-en="Most of our clients are organisations, businesses and institutions in the region. We handle the entire chain from brief to delivered file, including what other studios typically outsource.">
             Dei fleste kundane våre er organisasjonar, verksemder og institusjonar i regionen. Vi handterer heile kjeda frå brief til levert fil, inkludert det andre studioar vanlegvis set ut.
           </p>
         </div>
 
         <div class="about-capabilities">
           <div class="cap-group">
-            <h3 class="cap-group-title">Digitalt</h3>
+            <h3 class="cap-group-title" data-en="Digital">Digitalt</h3>
             <ul class="cap-list">
               <li>Webdesign og utvikling</li>
               <li>Webapplikasjonar</li>
@@ -337,7 +330,7 @@
             </ul>
           </div>
           <div class="cap-group">
-            <h3 class="cap-group-title">Identitet</h3>
+            <h3 class="cap-group-title" data-en="Identity">Identitet</h3>
             <ul class="cap-list">
               <li>Brandidentitetssystem</li>
               <li>Logo og merkedesign</li>
@@ -347,7 +340,7 @@
             </ul>
           </div>
           <div class="cap-group">
-            <h3 class="cap-group-title">Teknisk</h3>
+            <h3 class="cap-group-title" data-en="Technical">Teknisk</h3>
             <ul class="cap-list">
               <li>Fysisk skilting</li>
               <li>3D-modellering og CAD</li>
@@ -359,7 +352,7 @@
         </div>
 
         <div class="about-clients">
-          <span class="cap-group-title">Nokre kundar</span>
+          <span class="cap-group-title" data-en="Some clients">Nokre kundar</span>
           <div class="clients-list">
             <span>Kaupanger IL</span>
             <span>Envision-IT</span>
@@ -381,23 +374,23 @@
     <div class="section-inner">
       <div class="contact-inner">
         <div class="contact-copy">
-          <span class="section-label">Kontakt</span>
-          <h2 class="contact-heading">La oss snakka.</h2>
-          <p class="contact-text">
+          <span class="section-label" data-en="Contact">Kontakt</span>
+          <h2 class="contact-heading" data-en="Let&#39;s talk.">La oss snakka.</h2>
+          <p class="contact-text" data-en="We work directly with clients. No pitches, no tender rounds — just a conversation about what you need.">
             Vi arbeider direkte med kundane. Ingen pitchar, ingen anbodsrundar — berre ein samtale om kva du treng.
           </p>
         </div>
         <div class="contact-details">
           <div class="contact-item">
-            <span class="contact-item-label">E-post</span>
+            <span class="contact-item-label" data-en="Email">E-post</span>
             <a href="mailto:post@parkside.no" class="contact-item-value">post@parkside.no</a>
           </div>
           <div class="contact-item">
-            <span class="contact-item-label">Telefon</span>
+            <span class="contact-item-label" data-en="Phone">Telefon</span>
             <a href="tel:+4795143314" class="contact-item-value">+47 951 43 314</a>
           </div>
           <div class="contact-item">
-            <span class="contact-item-label">Registrert</span>
+            <span class="contact-item-label" data-en="Registered">Registrert</span>
             <span class="contact-item-value">Parkside1 AS · Org. 921 253 125</span>
           </div>
         </div>
@@ -414,5 +407,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="lang.js"></script>
 </body>
 </html>

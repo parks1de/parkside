@@ -19,9 +19,14 @@
         <img src="assets/logo/parkside-wordmark.svg" alt="Parkside." class="nav-wordmark" />
       </a>
       <div class="nav-links">
-        <a href="index.html#work" class="nav-link">Arbeid</a>
-        <a href="index.html#about" class="nav-link">Om</a>
-        <a href="index.html#contact" class="nav-cta">Kontakt</a>
+        <a href="index.html#work" class="nav-link" data-en="Work">Arbeid</a>
+        <a href="index.html#about" class="nav-link" data-en="About">Om</a>
+        <a href="index.html#contact" class="nav-cta" data-en="Contact">Kontakt</a>
+        <div class="lang-switch" aria-label="Language">
+          <button class="lang-btn lang-btn--active" data-lang="nn" aria-pressed="true">NN</button>
+          <span class="lang-sep" aria-hidden="true">·</span>
+          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -130,5 +135,6 @@
     </div>
   </footer>
 
+  <script src="lang.js"></script>
 </body>
 </html>
