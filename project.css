@@ -159,6 +159,17 @@
   text-align: center;
 }
 
+/* Caption below real images */
+.project-media-caption {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  padding: 0.6rem 0.2rem 0;
+  line-height: 1.5;
+}
+
 /* ── DETAIL LIST ─────────────────────────────────────── */
 .project-detail-list {
   display: flex;
