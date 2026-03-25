@@ -1488,9 +1488,10 @@ a.contact-item-value:hover {
   display: block;
   width: 280px;
   height: 280px;
-  object-fit: contain;
-  opacity: 0.55;
-  filter: drop-shadow(0 0 32px rgba(196, 163, 90, 0.18));
+  color: var(--accent);
+  opacity: 0.5;
+  filter: drop-shadow(0 0 28px rgba(196, 163, 90, 0.22));
+  overflow: visible;
 }
 
 /* Pixel container — positioned absolute over icon */
