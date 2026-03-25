@@ -4,12 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KalSikt — Parkside.</title>
-  <meta name="description" content="KalSikt — hendingsvising og innebygd funksjon for Kaupanger IL." />
+  <meta name="description" content="KalSikt — aktivitetskalender og webapplikasjon for Kaupanger IL. Veke/månad/liste-visning, innebygd widget og brukarkontoar." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
+  <style>
+    /* ── KalSikt landing preview — CSS rendered ── */
+    .ks-landing-preview {
+      background: #0f2213;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 21 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: clamp(3rem,5vw,5rem);
+      overflow: hidden;
+      position: relative;
+    }
+    .ks-pitch {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.18;
+    }
+    .ks-pitch svg { width: 55%; max-width: 480px; }
+    .ks-landing-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 2rem;
+    }
+    .ks-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.4);
+    }
+    .ks-hero-text {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .ks-hero-white { color: #fff; display: block; }
+    .ks-hero-yellow { color: #f5e642; display: block; }
+    .ks-tagline {
+      font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+      margin-top: 0.2rem;
+    }
+    .ks-cta {
+      background: #f5e642;
+      color: #0f2213;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      border-radius: 100px;
+      padding: 0.55rem 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Feature blocks ── */
+    .ks-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 1px;
+    }
+    .ks-feature {
+      background: var(--surface-2);
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .ks-feature-icon {
+      font-size: 1rem;
+      opacity: 0.6;
+    }
+    .ks-feature-title {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+    .ks-feature-desc {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ── Venue colour pills ── */
+    .ks-venues {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    .ks-venue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.25rem 0.6rem;
+    }
+    .ks-venue-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .ks-features { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,90 +164,169 @@
     <div class="section-inner">
 
       <div class="project-header">
-        <a href="index.html#work" class="project-back">
+        <a href="index.html#work" class="project-back" data-en="← Back to work">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3l-4 4 4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Tilbake til arbeid
         </a>
-        <span class="project-num">02 / Kaupanger IL</span>
+        <span class="project-num">01 / Kaupanger IL</span>
         <h1 class="project-title">KalSikt</h1>
         <div class="project-meta-row">
           <span class="tag">Web App</span>
           <span class="tag">API Integration</span>
           <span class="tag">Kaupanger IL</span>
         </div>
-        <p class="project-summary">
-          Hendingsvising og innebygd funksjon for Kaupanger IL. Brukarar legg inn via Google Calendar; data vert handsama gjennom API-et og presentert i ei strukturert offentleg vising.
+        <p class="project-summary" data-en="A full activity calendar web application for Kaupanger IL — week, month and list views, user accounts with Google OAuth, and an embeddable widget used directly on the club's website. Events sourced from Google Calendar API.">
+          Fullstendig aktivitetskalender-webapplikasjon for Kaupanger IL — veke-, månad- og listevisning, brukarkontoar med Google OAuth og ein innebygd widget brukt direkte på klubbsida. Hendingar henta frå Google Calendar API.
         </p>
       </div>
 
       <div class="project-body">
 
-        <!-- Main image -->
-        <div class="project-media project-media--wide" style="margin-bottom: clamp(3rem,5vw,5rem)">
-          <!-- LEGG TIL: skjermbilete av KalSikt i bruk -->
-          <div class="project-media-placeholder">
-            <span class="project-media-placeholder-icon">◻</span>
-            <span class="project-media-placeholder-label">Skjermbilete — KalSikt i bruk</span>
+        <!-- CSS landing preview -->
+        <div class="ks-landing-preview">
+          <!-- Pitch outline -->
+          <div class="ks-pitch" aria-hidden="true">
+            <svg viewBox="0 0 420 280" fill="none" stroke="white" stroke-width="1.5">
+              <rect x="10" y="10" width="400" height="260" rx="2"/>
+              <line x1="210" y1="10" x2="210" y2="270"/>
+              <circle cx="210" cy="140" r="40"/>
+              <rect x="10" y="85" width="60" height="110"/>
+              <rect x="350" y="85" width="60" height="110"/>
+              <rect x="10" y="110" width="28" height="60"/>
+              <rect x="382" y="110" width="28" height="60"/>
+              <circle cx="210" cy="140" r="2" fill="white"/>
+              <circle cx="75" cy="140" r="2" fill="white"/>
+              <circle cx="345" cy="140" r="2" fill="white"/>
+            </svg>
+          </div>
+          <div class="ks-landing-content">
+            <span class="ks-eyebrow" data-en="· ACTIVITY CALENDAR ·">· AKTIVITETSKALENDER ·</span>
+            <div class="ks-hero-text">
+              <span class="ks-hero-white" data-en="WHAT'S ON">KVA SKJER</span>
+              <span class="ks-hero-yellow" data-en="TODAY?">I DAG?</span>
+            </div>
+            <p class="ks-tagline" data-en="Training · Home matches · Venues — all in one place">Treningar · Heimekampar · Anlegg — alt samla på éin stad</p>
+            <span class="ks-cta" data-en="See activity ↓">Sjå aktivitet ↓</span>
           </div>
         </div>
 
-        <!-- Overview + Details -->
         <div class="project-grid">
           <div>
-            <span class="project-section-label">Om prosjektet</span>
-            <p class="project-text">
-              KalSikt er eit visingssystem bygd for Kaupanger IL som gjer det enkelt å halda publikum og medlemmar oppdaterte på aktivitet. Redaktørar legg inn hendingar direkte i Google Calendar — ingen ekstra system, ingen ekstra opplæring.
+            <span class="project-section-label" data-en="About the project">Om prosjektet</span>
+            <p class="project-text" data-en="KalSikt is a purpose-built activity calendar for Kaupanger IL. Club coordinators manage events directly in Google Calendar — the existing tool they already use — and KalSikt pulls the data through the API and presents it in a structured, public-facing interface. No separate CMS, no extra logins for admins.">
+              KalSikt er ein eigenbygd aktivitetskalender for Kaupanger IL. Koordinatorar i klubben legg inn hendingar direkte i Google Calendar — det eksisterande verktøyet dei allereie brukar — og KalSikt henter data gjennom API-et og presenterer det i eit strukturert, offentleg grensesnitt. Ingen separat CMS, ingen ekstra pålogging for administratorar.
             </p>
-            <p class="project-text">
-              Data flyt gjennom Google Calendar API og vert presentert i eit strukturert, offentleg grensesnitt som òg kan integrerast som innebygd komponent på eksisterande nettsider.
+            <p class="project-text" data-en="The app offers week, month, day and list views. Logged-in users can save a personalised &quot;Mine&quot; calendar — a filtered view of only the teams and venues they care about — that persists across devices. Login via Google OAuth or email/password.">
+              Appen tilbyr veke-, månad-, dag- og listevisning. Innloggja brukarar kan lagre ein personleg «Mine»-kalender — ei filtrert vising av berre laga og anlegga dei bryr seg om — som vert bevart på tvers av einingar. Pålogging via Google OAuth eller e-post/passord.
             </p>
-            <p class="project-text">
-              Systemet kategoriserer hendingar automatisk (kamp, trening, møte, dugnad) og markerer dei med fargekoder, slik at det er raskt å skanna kva som skjer og for kven.
+            <p class="project-text" data-en="KalSikt also ships as an embeddable widget — the full weekly schedule, colour-coded by venue, with date navigation and live filtering — dropped directly into the club's existing website with a single code snippet. Attribution: &quot;Utvikla av Parkside1 AS&quot;.">
+              KalSikt kjem òg som innebygd widget — fullstendig vekeprogram, fargekoda etter anlegg, med datonavigasjon og live-filtrering — lagt direkte inn på klubbens eksisterande nettstad med eit enkelt kode-snipp. Attribusjon: «Utvikla av Parkside1 AS».
             </p>
           </div>
           <div class="project-detail-list">
             <div class="project-detail-item">
-              <span class="project-detail-label">Kunde</span>
+              <span class="project-detail-label" data-en="Client">Kunde</span>
               <span class="project-detail-value">Kaupanger IL</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Type</span>
-              <span class="project-detail-value">Webapplikasjon · Innebygd komponent</span>
+              <span class="project-detail-label" data-en="Type">Type</span>
+              <span class="project-detail-value" data-en="Web application · Embeddable widget">Webapplikasjon · Innebygd widget</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Teknologi</span>
-              <span class="project-detail-value">Google Calendar API · JavaScript · CSS</span>
+              <span class="project-detail-label" data-en="Data source">Datakjelde</span>
+              <span class="project-detail-value">Google Calendar API</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Leveranse</span>
-              <span class="project-detail-value">Statisk nettstad + innebygd widget-kode</span>
+              <span class="project-detail-label" data-en="Auth">Innlogging</span>
+              <span class="project-detail-value">Google OAuth · E-post/passord</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label" data-en="Views">Visningar</span>
+              <span class="project-detail-value" data-en="Week · Month · Day · List">Veke · Månad · Dag · Liste</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label" data-en="Colour coding">Fargekoding</span>
+              <span class="project-detail-value" data-en="By venue — 5 categories">Etter anlegg — 5 kategoriar</span>
             </div>
           </div>
         </div>
 
         <hr class="project-divider" />
 
-        <!-- Secondary images — add screenshots here -->
+        <!-- Feature blocks -->
+        <span class="project-section-label" data-en="Key features">Nøkkelfunksjonar</span>
+        <div class="ks-features">
+          <div class="ks-feature">
+            <span class="ks-feature-icon">📅</span>
+            <span class="ks-feature-title" data-en="Multi-view calendar">Fleir-visnings-kalender</span>
+            <span class="ks-feature-desc" data-en="Week, month, day and list views. Today always highlighted. Navigate by week or jump to any date.">Veke, månad, dag og liste. I dag alltid markert. Naviger per veke eller hopp til valfri dato.</span>
+          </div>
+          <div class="ks-feature">
+            <span class="ks-feature-icon">⭐</span>
+            <span class="ks-feature-title" data-en="«Mine» — personal calendar">«Mine» — personleg kalender</span>
+            <span class="ks-feature-desc" data-en="Logged-in users filter by their own teams and venues. Saved cross-device via user account.">Innloggja brukarar filtrerer på eigne lag og anlegg. Lagra på tvers av einingar via brukarkonto.</span>
+          </div>
+          <div class="ks-feature">
+            <span class="ks-feature-icon">🔗</span>
+            <span class="ks-feature-title" data-en="Embeddable widget">Innebygd widget</span>
+            <span class="ks-feature-desc" data-en="The full weekly schedule as an embed — colour-coded by venue, filterable by team type. Drops into any existing website.">Fullstendig vekedøkt som embed — fargekoda etter anlegg, filtrerbart etter lagtype. Kan leggjast inn på kva som helst nettstad.</span>
+          </div>
+        </div>
+
+        <!-- Venue colour coding -->
+        <div style="margin-top: 1.5rem; margin-bottom: clamp(3rem,5vw,5rem);">
+          <span class="project-section-label" data-en="Venue colour system">Anlegg-fargesystem</span>
+          <div class="ks-venues">
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#6fa8dc;"></span>Gymsal</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#274e13;"></span>Nedre Gras</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#93c47d;"></span>Øvre Gras</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#4a86e8;"></span>Kaupangerhallen</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#f6b26b;"></span>Klubben</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#ea9999;"></span><span data-en="Matches — Herrar">Kampar — Herrar</span></span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#e06666;"></span>Rekrutt</span>
+            <span class="ks-venue"><span class="ks-venue-dot" style="background:#cc0000;"></span>Alderslag</span>
+          </div>
+        </div>
+
+        <!-- Screenshot slots -->
         <div class="project-grid">
           <div class="project-media">
+            <!-- Save as: assets/work/kalsikt-landing.png -->
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Detaljvising — hendingskort</span>
+              <span class="project-media-placeholder-label" data-en="Landing page — dark green hero">Landingsside — mørk grøn hero</span>
             </div>
           </div>
           <div class="project-media">
+            <!-- Save as: assets/work/kalsikt-app-week.png -->
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Innebygd widget på klubbside</span>
+              <span class="project-media-placeholder-label" data-en="App — week view with sidebar">App — vekevising med sidepanel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-grid" style="margin-top: 1px;">
+          <div class="project-media">
+            <!-- Save as: assets/work/kalsikt-widget.png -->
+            <div class="project-media-placeholder">
+              <span class="project-media-placeholder-icon">◻</span>
+              <span class="project-media-placeholder-label" data-en="Widget — embeddable weekly schedule">Widget — innebygd vekeprogram</span>
+            </div>
+          </div>
+          <div class="project-media">
+            <!-- Save as: assets/work/kalsikt-login.png -->
+            <div class="project-media-placeholder">
+              <span class="project-media-placeholder-icon">◻</span>
+              <span class="project-media-placeholder-label" data-en="Login — Google OAuth modal">Innlogging — Google OAuth-modal</span>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Next project -->
       <div class="project-next">
-        <span class="project-next-label">Neste prosjekt</span>
+        <span class="project-next-label" data-en="Next project">Neste prosjekt</span>
         <a href="ivionizer.html" class="project-next-link">
           <span class="project-next-title">IVIONIZER</span>
           <span class="project-next-arrow">→</span>
