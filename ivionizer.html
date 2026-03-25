@@ -4,12 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IVIONIZER — Parkside.</title>
-  <meta name="description" content="IVIONIZER — skrivebordsapplikasjon for fisheye-bileteredigering og konvertering til .DNG." />
+  <meta name="description" content="IVIONIZER — einaste kjende løysing for å redigere NavVis VLX-3 fisheye-bilete før Ivion-rendering. Laga for å løyse norsk GDPR-problem ved 3D-skanning av offentlege rom." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="project.css" />
+  <style>
+    /* ── Workflow pipeline ── */
+    .iv-workflow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+      align-items: center;
+      gap: 0;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: clamp(3rem,5vw,5rem);
+    }
+    .iv-step {
+      padding: 1.6rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .iv-step-num {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+    }
+    .iv-step-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+    .iv-step-sub {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+    .iv-step--highlight .iv-step-label { color: var(--accent); }
+    .iv-arrow-sep {
+      padding: 0 0.8rem;
+      color: var(--text-dim);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Problem / impact callout ── */
+    .iv-callout {
+      border-left: 2px solid var(--accent);
+      padding: 1.2rem 1.4rem;
+      background: var(--accent-dim);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1.5rem 0;
+    }
+    .iv-callout p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      margin: 0;
+    }
+    .iv-callout strong { color: var(--text); font-weight: 500; }
+
+    /* ── Stat blocks ── */
+    .iv-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 1px;
+    }
+    .iv-stat {
+      background: var(--surface-2);
+      padding: 1.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .iv-stat-value {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .iv-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .iv-workflow {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .iv-arrow-sep { display: none; }
+      .iv-stats { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,7 +139,7 @@
     <div class="section-inner">
 
       <div class="project-header">
-        <a href="index.html#work" class="project-back">
+        <a href="index.html#work" class="project-back" data-en="← Back to work">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M11 7H3M7 3l-4 4 4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Tilbake til arbeid
         </a>
@@ -44,57 +148,87 @@
         <div class="project-meta-row">
           <span class="tag">Software</span>
           <span class="tag">Desktop App</span>
-          <span class="tag">Envision-IT</span>
+          <span class="tag">GDPR</span>
+          <span class="tag">NavVis · Ivion</span>
         </div>
-        <p class="project-summary">
-          Skrivebordsapplikasjon for redigering av fisheye-bilete og konvertering til .DNG — eit format NavVis Ivion krev, men som ikkje godtek standard redigerte filer.
+        <p class="project-summary" data-en="The only known solution for editing NavVis VLX-3 fisheye images before NavVis Ivion renders them publicly — built to solve a critical Norwegian GDPR compliance gap that not even the software's own developers had addressed.">
+          Einaste kjende løysing for å redigere NavVis VLX-3 fisheye-bilete før NavVis Ivion presenterer dei offentleg — laga for å tette eit kritisk norsk GDPR-kompliansehol som ikkje eingong programvara sine eigne utviklarar hadde løyst.
         </p>
       </div>
 
       <div class="project-body">
 
-        <!-- Main screenshot -->
-        <div class="project-media project-media--wide" style="margin-bottom: clamp(3rem,5vw,5rem)">
-          <!-- LEGG TIL: skjermbilete av IVIONIZER v3 -->
-          <div class="project-media-placeholder">
-            <span class="project-media-placeholder-icon">◻</span>
-            <span class="project-media-placeholder-label">Skjermbilete — IVIONIZER v3 hovudvindauge</span>
+        <!-- Workflow pipeline -->
+        <span class="project-section-label" data-en="The pipeline IVIONIZER unlocked">Arbeidsflyten IVIONIZER opna</span>
+        <div class="iv-workflow">
+          <div class="iv-step">
+            <span class="iv-step-num">01</span>
+            <span class="iv-step-label">NavVis VLX-3</span>
+            <span class="iv-step-sub" data-en="Scans building. Captures fisheye .JPG of every room — including faces.">Skannar bygg. Tek fisheye .JPG av kvart rom — inkl. andlet.</span>
+          </div>
+          <span class="iv-arrow-sep">→</span>
+          <div class="iv-step iv-step--highlight">
+            <span class="iv-step-num">02</span>
+            <span class="iv-step-label">IVIONIZER</span>
+            <span class="iv-step-sub" data-en="Converts to Photoshop-editable format. Operator blurs faces, crops sensitive areas.">Konverterer til Photoshop-redigerbart format. Operatør slørar andlet, kuttar sensitive felt.</span>
+          </div>
+          <span class="iv-arrow-sep">→</span>
+          <div class="iv-step">
+            <span class="iv-step-num">03</span>
+            <span class="iv-step-label">Photoshop</span>
+            <span class="iv-step-sub" data-en="Free editing — blur brush, crops, anything. Saved back to working folder.">Full redigering — uskarpheitspenslar, utskjering. Lagra tilbake til arbeidsmappa.</span>
+          </div>
+          <span class="iv-arrow-sep">→</span>
+          <div class="iv-step">
+            <span class="iv-step-num">04</span>
+            <span class="iv-step-label">.DNG export</span>
+            <span class="iv-step-sub" data-en="IVIONIZER repackages with exact NavVis EXIF metadata. Ivion accepts the file.">IVIONIZER pakkar om med nøyaktige NavVis EXIF-metadata. Ivion godtek fila.</span>
           </div>
         </div>
 
         <div class="project-grid">
           <div>
-            <span class="project-section-label">Bakgrunn</span>
-            <p class="project-text">
-              NavVis Ivion er eit system for punkt­sky­visualisering nytta av Envision-IT i arbeid med digitalisering av historiske bygg og rom. Programvara godtek berre uredigerte fisheye-bilete i eit svært spesifikt format.
+            <span class="project-section-label" data-en="The problem">Problemet</span>
+            <p class="project-text" data-en="The NavVis VLX-3 is a professional LiDAR 3D scanner used by Envision-IT for digitising buildings. During a scan, the unit captures fisheye photographs of every space it passes through — automatically, continuously, at full resolution.">
+              NavVis VLX-3 er ein profesjonell LiDAR 3D-skanner brukt av Envision-IT for å digitalisere bygg. Under ein skanning tek eininga fisheye-fotografi av kvart rom han passerer gjennom — automatisk, kontinuerleg, i full oppløysing.
             </p>
-            <p class="project-text">
-              I praksis tydde dette at operatørar ikkje kunne fjerne sensitiv informasjon (andlet, skilt, kjennemerke) frå bildea — noko som er eit krav i mange oppdrag. IVIONIZER løyser dette gapet.
+            <p class="project-text" data-en="These images are then fed into NavVis Ivion — a cloud-based platform that renders them as an immersive walkthrough accessible to clients and the public. The problem: the VLX captures everything. People's faces. Name badges. Children in schools. All of it ends up publicly visible in Ivion.">
+              Desse bileta vert så lasta opp til NavVis Ivion — ei skybasert plattform som presenterer dei som ein immersiv gjennomgang tilgjengeleg for kundar og offentlegheita. Problemet: VLX-en fangar alt. Folks andlet. Namnebrikker. Barn i skular. Alt hamnar ope og synleg i Ivion.
             </p>
-            <p class="project-text">
-              Applikasjonen let operatøren utføre uskarpheitspensling og utskjering direkte i eit visuelt grensesnitt, og lagrar resultatet i .DNG-format med dei EXIF-metadataene Ivion krev for å godta fila. V3 er den tredje iterasjonen — re-bygt frå grunnen med betre ytring og støtte for batch-prosessering.
+
+            <div class="iv-callout">
+              <p data-en="<strong>Norwegian GDPR requires</strong> that identifiable persons captured in public or semi-public spaces cannot be published without consent. The scanning workflow — as designed — had no mechanism for compliance. Envision-IT's projects were at risk of being halted entirely."><strong>Norsk GDPR krev</strong> at identifiserbare personar som er fanga i offentlege eller halvprivate rom ikkje kan publiserast utan samtykke. Skannearbeidsflyten — slik han var utforma — hadde ingen mekanisme for å etterleve dette. Envision-IT sine prosjekt var i fare for å stoppe heilt opp.</p>
+            </div>
+
+            <p class="project-text" data-en="NavVis Ivion is engineered to reject any image that does not match its precise internal format — specific EXIF fields, encoding parameters, and file structure. Editing a .JPG in Photoshop and re-uploading it simply doesn't work. Ivion rejects it. There was no official workaround. NavVis' own developers had no solution.">
+              NavVis Ivion er konstruert for å avvise bilete som ikkje samsvarar med det presise interne formatet — spesifikke EXIF-felt, enkodingsparametrar og filstruktur. Å redigere ei .JPG-fil i Photoshop og laste ho opp igjen fungerer rett og slett ikkje. Ivion avviser ho. Det fanst ingen offisiell workaround. NavVis sine eigne utviklarar hadde ingen løysing.
             </p>
           </div>
+
           <div class="project-detail-list">
             <div class="project-detail-item">
-              <span class="project-detail-label">Kunde</span>
+              <span class="project-detail-label" data-en="Client">Kunde</span>
               <span class="project-detail-value">Envision-IT</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Versjon</span>
-              <span class="project-detail-value">v3 (tredje iterasjon)</span>
+              <span class="project-detail-label" data-en="Scanner hardware">Skannarhardware</span>
+              <span class="project-detail-value">NavVis VLX-3</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Plattform</span>
-              <span class="project-detail-value">Windows · macOS</span>
+              <span class="project-detail-label" data-en="Target platform">Målplattform</span>
+              <span class="project-detail-value">NavVis Ivion</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Funksjonar</span>
-              <span class="project-detail-value">Uskarpheitspensling · Utskjering · .DNG-eksport · EXIF-injeksjon · Batch-prosessering</span>
+              <span class="project-detail-label" data-en="Regulation">Regelverk</span>
+              <span class="project-detail-value">Norsk GDPR / Personopplysningslova</span>
             </div>
             <div class="project-detail-item">
-              <span class="project-detail-label">Leveranse</span>
-              <span class="project-detail-value">Installérbar desktopapplikasjon</span>
+              <span class="project-detail-label" data-en="Authorship">Forfattarskap</span>
+              <span class="project-detail-value" data-en="Sole-authored — concept, development and iteration">Einsleg forfattar — konsept, utvikling og iterasjon</span>
+            </div>
+            <div class="project-detail-item">
+              <span class="project-detail-label" data-en="Current version">Noverande versjon</span>
+              <span class="project-detail-value">v3</span>
             </div>
           </div>
         </div>
@@ -102,16 +236,67 @@
         <hr class="project-divider" />
 
         <div class="project-grid">
+          <div>
+            <span class="project-section-label" data-en="The solution">Løysinga</span>
+            <p class="project-text" data-en="IVIONIZER reverse-engineered the internal file format that NavVis Ivion expects. By analysing the exact EXIF metadata structure, encoding chain and byte-level packaging of authentic VLX-3 outputs, IVIONIZER can receive an edited image — processed freely in Photoshop, faces blurred, sensitive areas cropped — and repackage it as a file Ivion treats as genuine.">
+              IVIONIZER reverserte det interne filformatet NavVis Ivion forventar. Ved å analysere den nøyaktige EXIF-metadatastrukturen, enkodingskjeda og byte-nivå-pakkinga av ekte VLX-3-utdata, kan IVIONIZER ta i mot eit redigert bilete — fritt prosessert i Photoshop, andlet sløra, sensitive felt klipt bort — og pakke det om til ei fil Ivion handsamar som ekte.
+            </p>
+            <p class="project-text" data-en="This had never been done before. The NavVis developer community had no published method. Even engineers at NavVis themselves — when the problem was raised — had no answer. IVIONIZER was the first and only working implementation.">
+              Dette hadde aldri vorte gjort tidlegare. NavVis-utviklarane hadde ingen publisert metode. Sjølv ingeniørar hjå NavVis — då problemet vart teke opp — hadde inga løysing. IVIONIZER var den første og einaste fungerande implementasjonen.
+            </p>
+            <p class="project-text" data-en="The application has gone through three iterations. v3 adds batch processing — an operator can process an entire scan session (hundreds of images) in a single queue, rather than handling each file individually. The tool runs on Windows and macOS.">
+              Applikasjonen har gått gjennom tre iterasjonar. v3 legg til batch-prosessering — ein operatør kan behandle heile skandøkter (hundrevis av bilete) i ein enkelt kø, i staden for å handtere kvar fil individuelt. Verktøyet køyrer på Windows og macOS.
+            </p>
+          </div>
+
+          <div>
+            <span class="project-section-label" data-en="Key capabilities">Nøkkelfunksjonar</span>
+            <div class="iv-stats">
+              <div class="iv-stat">
+                <span class="iv-stat-value">v3</span>
+                <span class="iv-stat-label" data-en="Current iteration — rebuilt from ground up">Noverande iterasjon — bygt om frå grunnen</span>
+              </div>
+              <div class="iv-stat">
+                <span class="iv-stat-value">∞</span>
+                <span class="iv-stat-label" data-en="Batch queue — full scan sessions in one run">Batchkø — heile skand­økter i éin gjennomkøyring</span>
+              </div>
+              <div class="iv-stat">
+                <span class="iv-stat-value">1</span>
+                <span class="iv-stat-label" data-en="Known working solution — worldwide">Kjend fungerande løysing — globalt</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;" class="project-detail-list">
+              <div class="project-detail-item">
+                <span class="project-detail-label" data-en="Format bridge">Formatbru</span>
+                <span class="project-detail-value">VLX-3 .JPG → Photoshop → .DNG (Ivion-kompatibel)</span>
+              </div>
+              <div class="project-detail-item">
+                <span class="project-detail-label">EXIF</span>
+                <span class="project-detail-value" data-en="Full NavVis metadata preserved and injected post-edit">Fullstendig NavVis-metadata bevart og injisert etter redigering</span>
+              </div>
+              <div class="project-detail-item">
+                <span class="project-detail-label" data-en="Platform">Plattform</span>
+                <span class="project-detail-value">Windows · macOS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="project-divider" />
+
+        <!-- Media placeholders — waiting for VLX/Ivion reference images -->
+        <div class="project-grid">
           <div class="project-media">
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Skjermbilete — uskarpheit-verktøy i bruk</span>
+              <span class="project-media-placeholder-label" data-en="NavVis VLX-3 scanner in the field">NavVis VLX-3 skanner i felt</span>
             </div>
           </div>
           <div class="project-media">
             <div class="project-media-placeholder">
               <span class="project-media-placeholder-icon">◻</span>
-              <span class="project-media-placeholder-label">Skjermbilete — batch-køen og eksportstatus</span>
+              <span class="project-media-placeholder-label" data-en="Before / after — face blur workflow">Før / etter — uskarpheitsarbeidsflyt på andlet</span>
             </div>
           </div>
         </div>
@@ -119,7 +304,7 @@
       </div>
 
       <div class="project-next">
-        <span class="project-next-label">Neste prosjekt</span>
+        <span class="project-next-label" data-en="Next project">Neste prosjekt</span>
         <a href="chana-beauty.html" class="project-next-link">
           <span class="project-next-title">Chana Beauty</span>
           <span class="project-next-arrow">→</span>

@@ -1534,13 +1534,16 @@ a.contact-item-value:hover {
   opacity: 0.55;
   filter: drop-shadow(0 0 32px rgba(196, 163, 90, 0.28));
   overflow: visible;
+  position: relative;
+  z-index: 2;
 }
 
-/* Pixel container — positioned absolute over icon */
+/* Pixel container — sits BEHIND the P icon (z-index: 1 < img z-index: 2) */
 .hero-pixels {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
 }
 
 /* Individual pixel */
@@ -1552,14 +1555,14 @@ a.contact-item-value:hover {
   height: var(--px-size);
   background: var(--accent);
   opacity: 0;
-  animation: pixelFall var(--px-dur) ease-out var(--px-delay) infinite;
+  animation: pixelRise var(--px-dur) ease-out var(--px-delay) infinite;
 }
 
-@keyframes pixelFall {
-  0%   { opacity: 0; transform: translate(0, 0) scale(1); }
-  8%   { opacity: 0.9; }
-  85%  { opacity: 0.3; }
-  100% { opacity: 0; transform: translate(var(--px-dx), var(--px-dy)) scale(0.4); }
+@keyframes pixelRise {
+  0%   { opacity: 0; transform: translate(var(--px-dx), 0) scale(0.5); }
+  10%  { opacity: 0.85; }
+  78%  { opacity: 0.55; }
+  100% { opacity: 0; transform: translate(var(--px-dx), var(--px-dy)) scale(1.05); }
 }
 
 /* Hide icon on small screens — keeps hero clean */
